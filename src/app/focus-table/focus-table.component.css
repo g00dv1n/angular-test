@@ -1,0 +1,12 @@
+.focused {
+  background-color: whitesmoke;
+}
+
+.wrapper {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  background-color: white;
+}
+
+thead tr th {
+  background-color: rgba(92, 184, 92, 0.1)
+}

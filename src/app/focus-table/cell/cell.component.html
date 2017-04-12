@@ -1,0 +1,6 @@
+<div *ngIf="!isEdit" (click)="toggleEdit()">
+  {{value}}
+</div>
+<div *ngIf="isEdit">
+  <input [(ngModel)]="newValue" autofocus />
+</div>

@@ -1,0 +1,29 @@
+<div class="wrapper">
+  <table class="table table-bordered">
+    <thead>
+    <tr>
+      <th *ngFor="let col of selectedColumns; let i = index">
+        <app-header-cell
+          [column]="col"
+          [columns]="columns"
+          (onChanged)="saveColumn($event, i)"
+        ></app-header-cell>
+      </th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let tableObject of table; let y = index">
+      <td *ngFor="let col of selectedColumns; let x = index"
+          [class.focused]="isFocus(x,y)"
+          (click)="setFocus(x,y)"
+          [style.width.%]="100/selectedColumns.length"
+      >
+          <app-cell
+            [isFocus]="isFocus(x,y)"
+            [value]="tableObject[col.dataIndex]"
+            (onChanged)="onChanged($event)"
+          ></app-cell>
+    </tr>
+    </tbody>
+  </table>
+</div>
